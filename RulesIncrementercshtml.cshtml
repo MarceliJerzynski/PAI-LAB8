@@ -1,0 +1,6 @@
+﻿@{ 
+    List<string> rules = (Session["rules"] != null) ? (List<string>)Session["rules"] : new List<string>();
+    rules.Add(Request["rule"]);
+    Session["rules"] = rules;
+    Response.Redirect("Session1.cshtml");
+}

@@ -1,0 +1,21 @@
+﻿@{ 
+    List<string> rules = (Session["rules"] != null) ? (List<string>)Session["rules"] : new List<string>();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session</title>
+</head>
+<body>
+        <form method="post" action="~/RulesIncrementercshtml.cshtml"> 
+        <input type="text" name="rule" placeholder="Rule" />
+        <input type="submit" value="Submit" />
+    </form>
+    <ol>
+        @foreach(var rule in rules)
+        {
+            <li>@rule</li>
+        }
+    </ol>
+</body>
+</html>
